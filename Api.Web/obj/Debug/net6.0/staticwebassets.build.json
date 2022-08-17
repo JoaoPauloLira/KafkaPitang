@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "esaShPgVeLqfnbshFLSBkteDTH+HBZf+xvFnqgB1mFY=",
+  "Source": "Api.Web",
+  "BasePath": "_content/Api.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

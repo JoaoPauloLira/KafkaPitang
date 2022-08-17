@@ -1,0 +1,12 @@
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\bin\Debug\net6.0\Producer.deps.json
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\bin\Debug\net6.0\Producer.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\bin\Debug\net6.0\Producer.pdb
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.csproj.AssemblyReference.cache
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.AssemblyInfoInputs.cache
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.AssemblyInfo.cs
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.csproj.CoreCompileInputs.cache
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\refint\Producer.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\Producer.pdb
+C:\Users\jpls\RiderProjects\KafkaPitang\Producer\obj\Debug\net6.0\ref\Producer.dll
