@@ -1,3 +1,6 @@
+using Api.Web.Extensions;
+using Entities;
+using Entities.Enum;
 using Producer;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,14 +19,44 @@ public class KafkaPitangController : ControllerBase
         _dispatcher = dispatcher;
     }
 
-    [HttpGet]
+    [HttpGet("GetKafkaTeste")]
     public async Task<OkObjectResult> GetKafkaTeste()
     {
         for (var i = 0; i < 100; i++)
         {
-            //Thread.Sleep(TimeSpan.FromSeconds(2));
-            await _dispatcher.Dispatch($"{i}", "TesteJP",$"teste - {i}");
+            await _dispatcher.Dispatch($"{i}", TopicosKafka.PITANG_STRING.ToString(),$"teste - {i}");
         }
-        return Ok("teste");
+        return Ok("Teste Kafka - String");
+    }
+    
+    [HttpGet("GetKafkaTesteUsuario")]
+    public async Task<OkObjectResult> GetKafkaTesteUsuario()
+    {
+        for (var i = 0; i < 10; i++)
+        {
+            var usuario = new Usuario(i + 1, $"Usuario Teste-{i}", 55, new Endereco("Rua teste", "Bairro teste", i));
+            
+            await _dispatcher.Dispatch($"{i}", TopicosKafka.PITANG_USUARIO.ToString(), usuario);
+        }
+        return Ok("Teste Kafka - Usuário");
+    }
+    
+    [HttpPatch("GetKafkaTesteArquivo")]
+    public async Task<OkObjectResult> GetKafkaTesteArquivo()
+    {
+        var arquivoUpload = await ArquivoUpload();
+
+        await _dispatcher.Dispatch(arquivoUpload.Id.ToString(), TopicosKafka.PITANG_ARQUIVO.ToString(), arquivoUpload);
+        
+        return Ok("Teste Kafka - Arquivo Bits");
+    }
+
+    private async Task<ArquivoUpload> ArquivoUpload()
+    {
+        var stream = Request.Body;
+        var conteudo = await stream.ToByteArrayAsync();
+
+        var arquivoUpload = new ArquivoUpload(145, conteudo);
+        return arquivoUpload;
     }
 }

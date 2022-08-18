@@ -70,3 +70,5 @@ C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Producer.dll
 C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Producer.pdb
 C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Consumer.dll
 C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Consumer.pdb
+C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Entities.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Api.Web\bin\Debug\net6.0\Entities.pdb

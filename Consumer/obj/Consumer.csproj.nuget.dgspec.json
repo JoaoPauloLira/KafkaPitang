@@ -29,7 +29,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -55,6 +59,62 @@
               "version": "[13.0.2-beta1, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\jpls\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpls\\RiderProjects\\KafkaPitang\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jpls\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/onsvsts/_packaging/ONS/npm/registry/": {},
+          "https://pkgs.dev.azure.com/pitang/_packaging/pitang.feed/npm/registry": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

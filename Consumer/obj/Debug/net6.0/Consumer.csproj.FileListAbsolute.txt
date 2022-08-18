@@ -16,3 +16,5 @@ C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\obj\Debug\net6.0\Consumer.dll
 C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\obj\Debug\net6.0\refint\Consumer.dll
 C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\obj\Debug\net6.0\Consumer.pdb
 C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\obj\Debug\net6.0\ref\Consumer.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\bin\Debug\net6.0\Entities.dll
+C:\Users\jpls\RiderProjects\KafkaPitang\Consumer\bin\Debug\net6.0\Entities.pdb

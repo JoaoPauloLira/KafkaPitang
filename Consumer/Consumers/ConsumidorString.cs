@@ -1,11 +1,12 @@
 ﻿using Confluent.Kafka;
+using Entities.Enum;
 using Microsoft.Extensions.Logging;
 
 namespace Consumer;
 
-public class ConsumidorTeste : KafkaBaseConsumer<string>
+public class ConsumidorString : KafkaBaseConsumer<string>
 {
-    public ConsumidorTeste(ILogger<KafkaBaseConsumer<string>> logger) : base(logger)
+    public ConsumidorString(ILogger<KafkaBaseConsumer<string>> logger) : base(logger)
     {
     }
 
@@ -17,7 +18,7 @@ public class ConsumidorTeste : KafkaBaseConsumer<string>
         return Task.CompletedTask;
     }
 
-    public override string GetTopic() => "TesteJP";
+    public override string GetTopic() => TopicosKafka.PITANG_STRING.ToString();
 
-    public override string GetConsumerGroup() => nameof(ConsumidorTeste);
+    public override string GetConsumerGroup() => nameof(ConsumidorString);
 }

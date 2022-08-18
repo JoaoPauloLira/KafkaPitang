@@ -11,7 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IKafkaDispatcher, KafkaDispatcher>();
-builder.Services.AddHostedService<ConsumidorTeste>();
+builder.Services.AddHostedService<ConsumidorString>();
+builder.Services.AddHostedService<ConsumidorUsuario>();
+builder.Services.AddHostedService<ConsumidorBytes>();
 
 var app = builder.Build();
 

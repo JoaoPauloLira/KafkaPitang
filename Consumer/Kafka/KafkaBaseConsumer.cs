@@ -41,14 +41,15 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
             
             //Informar o topico que esta responsavel por consumir
             consumer.Subscribe(GetTopic());
-            //ConsumeResult<string, string> consumerResult = null;
+            
+            ConsumeResult<string, string> consumerResult = null;
             
             //Fica verificando se chegou alguma msg
             while (!stoppingToken.IsCancellationRequested)
             {
                 try
                 {
-                    var consumerResult = consumer.Consume(stoppingToken);
+                    consumerResult = consumer.Consume(stoppingToken);
                     var menssagemValue = JsonConvert.DeserializeObject<T>(consumerResult.Message.Value);
                     var parsedMessagem = new Message<string, T>
                     {
@@ -56,7 +57,7 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
                         Value = menssagemValue
                     };
 
-                    await Parse(parsedMessagem);//Repassa a msg tratada para a classe que extende o KafkaBaseConsumer
+                    await Parse(parsedMessagem); //Repassa a msg tratada para a classe que extende o KafkaBaseConsumer
                     consumer.Commit(); //Commita a msg informando que foi consumida
                 }
                 catch (ConsumeException e)
@@ -67,10 +68,14 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
                 {
                     consumer.Close();
                 }
+                catch (JsonReaderException e)
+                {
+                    _logger.LogError($"Erro de conversão JSON ao executar o consumer: {consumerResult.Message.Value}");
+                }
                 catch (Exception e)
                 {
                     _logger.LogError(e, $"Erro ao executar o consumer Message : {e.Message}");
-                    _logger.LogError(e, $"Erro ao executar o consumer Stack : {e.StackTrace}");
+                    //_logger.LogError(e, $"Erro ao executar o consumer Stack : {e.StackTrace}");
                 }
             }
         }).Start();
