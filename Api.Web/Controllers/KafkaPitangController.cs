@@ -3,6 +3,7 @@ using Entities;
 using Entities.Enum;
 using Producer;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Api.Web.Controllers;
 
@@ -66,8 +67,8 @@ public class KafkaPitangController : ControllerBase
         var stream = Request.Body;
         var conteudo = await stream.ToByteArrayAsync();
 
-        //var id = 145;
-        var id = Random.Shared.Next(144);
+        var id = 145;
+        //var id = Random.Shared.Next(144);
 
         var arquivoUpload = new ArquivoUpload(id, conteudo);
         return arquivoUpload;

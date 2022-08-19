@@ -25,7 +25,7 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
                 AutoOffsetReset = AutoOffsetReset.Earliest, //define que tem que pegar todas as msgs que não foram consumidas até o momento, Podendo ser: Mais recente, Mais Antiga ou as que Teve erro
                 MaxInFlight = 1, //Quantidade de solicitações em andamento por conexão do broker
                 MaxPartitionFetchBytes = 1048576, //Tamanho máximo inicial de bytes por topico/partição a serem solicitado ao buscar mensagem do broker
-                EnableAutoCommit = false, //Definimos como false para que se ouver deslocamento das msg's entre as partições não perca as msg's que foream re-ordenadas
+                EnableAutoCommit = false, //Definimos como false para que se houver deslocamento das msg's entre as partições não perca as msg's que foram re-ordenadas
                 AllowAutoCreateTopics = true //Para permitir que seja criado os topicos no broker caso eles ainda não exista
             };
 
