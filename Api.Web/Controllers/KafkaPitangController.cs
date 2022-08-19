@@ -18,13 +18,23 @@ public class KafkaPitangController : ControllerBase
         _logger = logger;
         _dispatcher = dispatcher;
     }
-
+    
     [HttpGet("GetKafkaTeste")]
     public async Task<OkObjectResult> GetKafkaTeste()
     {
         for (var i = 0; i < 100; i++)
         {
-            await _dispatcher.Dispatch($"{i}", TopicosKafka.PITANG_STRING.ToString(),$"teste - {i}");
+            await _dispatcher.Dispatch($"{i}", TopicosKafka.LOJA_NOVO_PEDIDO.ToString(),$"teste - {i}");
+        }
+        return Ok("Teste Kafka - String");
+    }
+
+    [HttpGet("GetKafkaTesteString")]
+    public async Task<OkObjectResult> GetKafkaTesteString()
+    {
+        for (var i = 0; i < 100; i++)
+        {
+            await _dispatcher.Dispatch($"{i}", TopicosKafka.PITANG_STRING.ToString(),$"testeString - {i}");
         }
         return Ok("Teste Kafka - String");
     }
@@ -56,7 +66,10 @@ public class KafkaPitangController : ControllerBase
         var stream = Request.Body;
         var conteudo = await stream.ToByteArrayAsync();
 
-        var arquivoUpload = new ArquivoUpload(145, conteudo);
+        //var id = 145;
+        var id = Random.Shared.Next(144);
+
+        var arquivoUpload = new ArquivoUpload(id, conteudo);
         return arquivoUpload;
     }
 }
