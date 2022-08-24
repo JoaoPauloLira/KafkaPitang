@@ -20,7 +20,7 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
         {
             var configuracaoConsumer = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092", //Local que o kafka esta executando
+                BootstrapServers = "localhost:9092,localhost:9093", //Local que o kafka esta executando
                 GroupId = GetConsumerGroup(), //Grupo que esse consumer vai ficar escutando
                 AutoOffsetReset = AutoOffsetReset.Earliest, //define que tem que pegar todas as msgs que não foram consumidas até o momento, Podendo ser: Mais recente, Mais Antiga ou as que Teve erro
                 MaxInFlight = 1, //Quantidade de solicitações em andamento por conexão do broker
@@ -28,7 +28,7 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
                 EnableAutoCommit = false, //Definimos como false para que se houver deslocamento das msg's entre as partições não perca as msg's que foram re-ordenadas
                 AllowAutoCreateTopics = true //Para permitir que seja criado os topicos no broker caso eles ainda não exista
             };
-
+            
             //Passa as configuração para o criar o consumer e caso der erro podemos logar o erro
             var consumer = new ConsumerBuilder<string, string>(configuracaoConsumer)
                 .SetValueDeserializer(Deserializers.Utf8)

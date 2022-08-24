@@ -17,7 +17,7 @@ public class KafkaDispatcher : IKafkaDispatcher
     {
         var configuracaoProducer = new ProducerConfig
         {
-            BootstrapServers = "localhost:9092", //Local que o kafka esta executando
+            BootstrapServers = "localhost:9092,localhost:9093", //Local que o kafka esta executando
             EnableIdempotence = true, // Garante que a msg seja produzida apenas 1x e em ordem de produção, por padrão pede que seja  Acks.All e MessageSendMaxRetries = int.MaxValue
             Acks = Acks.All, // All = Bloqueia até que a msg seja confirmada por todas as replicas sincronizadas
             MessageSendMaxRetries = int.MaxValue, //int.MaxValue = 2147483647
