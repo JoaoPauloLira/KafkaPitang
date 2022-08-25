@@ -20,7 +20,7 @@ public abstract class KafkaBaseConsumer<T> : BackgroundService, IConsumerService
         {
             var configuracaoConsumer = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092,localhost:9093", //Local que o kafka esta executando
+                BootstrapServers = "localhost:9092", //,localhost:9093//Local que o kafka esta executando
                 GroupId = GetConsumerGroup(), //Grupo que esse consumer vai ficar escutando
                 AutoOffsetReset = AutoOffsetReset.Earliest, //define que tem que pegar todas as msgs que não foram consumidas até o momento, Podendo ser: Mais recente, Mais Antiga ou as que Teve erro
                 MaxInFlight = 1, //Quantidade de solicitações em andamento por conexão do broker
